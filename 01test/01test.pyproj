@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0b4c4dc3-db9d-44c9-95cd-f33a32166c84</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>_02函数.py</StartupFile>
+    <StartupFile>_10文件.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,9 @@
   <ItemGroup>
     <Compile Include="_01test.py" />
     <Compile Include="_02函数.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_10文件.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
