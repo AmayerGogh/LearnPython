@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0b4c4dc3-db9d-44c9-95cd-f33a32166c84</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>_10文件.py</StartupFile>
+    <StartupFile>_02函数.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,13 +21,23 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="hello\__init__.py" />
     <Compile Include="_01test.py" />
     <Compile Include="_02函数.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="_10文件.py">
+    <Compile Include="_03万能list.py" />
+    <Compile Include="_04函数式.py" />
+    <Compile Include="_05面向对象.py" />
+    <Compile Include="_06file.py" />
+    <Compile Include="_10file.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="_classes.py" />
+    <Compile Include="_hello.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="hello\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

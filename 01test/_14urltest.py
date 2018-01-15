@@ -5,7 +5,7 @@ email = input('Email: ')
 passwd = input('Password: ')
 login_data = parse.urlencode([
     ('username', email),
-    ('password', passwd),
+    ('password', passwd ),
     ('entry', 'mweibo'),
     ('client_id', ''),
     ('savestate', '1'),
@@ -23,3 +23,4 @@ with request.urlopen(req, data=login_data.encode('utf-8')) as f:
     for k, v in f.getheaders():
         print('%s: %s' % (k, v))
     print('Data:', f.read().decode('utf-8'))
+    
