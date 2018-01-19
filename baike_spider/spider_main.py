@@ -37,6 +37,13 @@ if __name__ =='__main__':
     root_url ='https://baike.baidu.com/item/Python/407313?fr=aladdin'
     obj_spider =SpiderMain()
     obj_spider.craw(root_url)
-
-
-
+'''
+爬虫思路
+url管理器加入url
+if url管理器有url
+  获取url
+  内容 = 下载器(url)
+  更多的url,解析出来的数据  = 解析器(url,内容)
+  url管理器 加入更多的url
+  处理器    加入解析出来的数据
+'''  

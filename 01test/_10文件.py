@@ -40,6 +40,5 @@
     
 
 #test
-with open('01test3434威威2.txt', 'a') as f:
+with open('01.txt', 'a') as f:
    f.write('你好, world1!\r\n') 
-print(1)      
