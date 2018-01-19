@@ -2,11 +2,10 @@ from urllib import request
 from bs4 import BeautifulSoup
 import requests
 import os
-
+import threading
 class Spider():
     #这个正则写的很棒棒
-    # 爬虫库 beautifulSoup ,Scrapy
-   
+    # 爬虫库 beautifulSoup ,Scrapy   
     root_pattern ='<div class="video-info">([\s\S]*?)</div>'
     name_pattern ='</i>([\s\S]*?)</span>'
     number_pattern ='<span class="video-number">([\s\S]*?)</span>'
@@ -34,7 +33,7 @@ class Spider():
         path=image_dir +imageName +'.jpg'
         print('downning... ' +imageurl)              
         try:
-            rsp =requests.get(imageurl,stream =True)
+            rsp =requests.get(imageurl,stream =True,timeout=10)
             image =rsp.content              
             with open(path,'wb') as file:
                 file.write(image) 
@@ -62,19 +61,27 @@ class Spider():
         
     def go(self):
         print('开始')
-        url ='https://cl.giit.us/thread0806.php?fid=16&search=&page=1'
+        url ='https://cl.giit.us/thread0806.php?fid=16&search=&page=2'
         htmls= self.__fetch_content(url)
         titles = self.__get_titles(htmls)
         i_out =1
+       
         for src in titles:
             print("title 为"+src)
             images_src_list = self.__get_images(src)
             i=1
+            threads =[]
             for img_src in images_src_list:
                 path ='c:/code/temp/%s/' % str(i_out)
-                self.download_img(img_src,path,str(i))                
+                str_i =str(i)
+                #self.download_img(img_src,path,str_i)
+                t = threading.Thread(target=self.download_img, args=(img_src,path,str_i,))
+                t.start()
+                threads.append(t)                
                 i+=1
+            for item in threads:
+                item.join()
             i_out+=1    
 
-#spider = Spider()
-#spider.go()    
+spider = Spider()
+spider.go()    
