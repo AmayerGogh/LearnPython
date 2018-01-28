@@ -5,6 +5,9 @@ class BookInfoManage(models.Manager):
         return super(BookInfoManage,self).get_queryset().filter(
     isDelete=False)
     #对象方法
+    #使用
+    #b =BookInfo.books2.create('123)
+    #b.save()
     def create(self,btitle):
         b =BookInfo()
         b.btitle =btitle
@@ -18,6 +21,7 @@ class BookInfo(models.Model)    :
     books=models.Manager()    
     books2=BookInfoManage()
     #创建一个类方法
+    #使用 b=BookInfo.create('') b.save()
     @classmethod
     def create(cls,btitle):
         b =BookInfo()
