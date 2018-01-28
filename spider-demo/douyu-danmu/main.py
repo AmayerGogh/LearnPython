@@ -9,7 +9,7 @@ def pp(msg):
     print(msg.encode(sys.stdin.encoding, 'ignore').
         decode(sys.stdin.encoding))
 
-dmc = DanMuClient('https://www.douyu.com/276685')
+dmc = DanMuClient('https://www.douyu.com/4095712') #//https://www.douyu.com/4095712   699689
 if not dmc.isValid(): print('Url not valid')
 
 @dmc.danmu

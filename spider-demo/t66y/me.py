@@ -61,7 +61,7 @@ class Spider():
         
     def go(self):
         print('开始')
-        url ='https://cl.giit.us/thread0806.php?fid=16&search=&page=2'
+        url ='https://cl.giit.us/thread0806.php?fid=16&search=&page=1'
         htmls= self.__fetch_content(url)
         titles = self.__get_titles(htmls)
         i_out =1
@@ -72,7 +72,7 @@ class Spider():
             i=1
             threads =[]
             for img_src in images_src_list:
-                path ='c:/code/temp/%s/' % str(i_out)
+                path ='c:/code/temp2/%s/' % str(i_out)
                 str_i =str(i)
                 #self.download_img(img_src,path,str_i)
                 t = threading.Thread(target=self.download_img, args=(img_src,path,str_i,))
